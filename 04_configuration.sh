@@ -5,7 +5,7 @@ set -x #echo on
 # This is meant to be executed with arch-chroot /mnt
 # and it has to be copied inside /mnt first
 # example, after copying it to /mnt/root 
-# arch-chroot /mnt /root/03_configuration.sh
+# arch-chroot /mnt /root/04_configuration.sh
 
 ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 hwclock --systohc
