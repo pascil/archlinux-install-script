@@ -15,6 +15,7 @@ Starting...
 ( arch-chroot /mnt /root/06_user.sh )|& tee 06_user.log
 mkdir -p /mnt/home/bettini/install-logs
 cp -v *.log /mnt/home/bettini/install-logs/
+chown -R 1000:1000 /mnt/home/bettini/install-logs/
 
 echo -ne "
 ...Finished!
