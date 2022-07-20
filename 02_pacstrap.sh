@@ -12,7 +12,7 @@ Setting mirrors
 "
 
 reflector \
-	--country Italy,Germany \
+	--country Italy \
 	--age 12 \
 	--protocol https \
 	--latest 5 \
