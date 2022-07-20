@@ -2,6 +2,8 @@
 
 set -x #echo on
 
+pacman -S --noconfirm archlinux-keyring
+
 echo -ne "
 Setting mirrors
 "
