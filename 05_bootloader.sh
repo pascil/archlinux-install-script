@@ -12,7 +12,6 @@ grub_resume_boot_option() {
     echo "resume=$grub_swap_part"
 }
 
-
 pacman -S --noconfirm --needed grub grub-btrfs efibootmgr base-devel linux-lts-headers networkmanager network-manager-applet
 
 sed -i 's/MODULES=(.*)/MODULES=(crc32c-intel btrfs)/' /mnt/etc/mkinitcpio.conf
@@ -21,7 +20,9 @@ sed -i 's/HOOKS=(.*)/HOOKS=(base udev autodetect modconf block filesystems keybo
 
 mkinitcpio -P
 
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 mem_sleep_default=deep $(grub_resume_boot_option)"/' /etc/default/grub
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 mem_sleep_default=deep"/' /etc/default/grub
+
+sed -i "/^GRUB_CMDLINE_LINUX_DEFAULT/ s~\"$~ $(grub_resume_boot_option)\"~g" /etc/default/grub
 
 grub-install --target=x86_64-efi --bootloader-id=Arch --efi-directory=/boot/efi
 
