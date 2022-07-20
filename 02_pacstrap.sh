@@ -2,6 +2,9 @@
 
 set -x #echo on
 
+# to avoid failures of the shape
+# signature from "..." is invalid
+# File ... is corrupted (invalid or corrupted package (PGP signature))
 pacman -S --noconfirm archlinux-keyring
 
 echo -ne "
