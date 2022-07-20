@@ -14,7 +14,7 @@ grub_resume_boot_option() {
 
 pacman -S --noconfirm --needed grub grub-btrfs efibootmgr base-devel linux-lts-headers networkmanager network-manager-applet
 
-sed -i 's/MODULES=(.*)/MODULES=(crc32c-intel btrfs)/' /mnt/etc/mkinitcpio.conf
+sed -i 's/MODULES=(.*)/MODULES=(crc32c-intel btrfs)/' /etc/mkinitcpio.conf
 
 sed -i 's/HOOKS=(.*)/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck resume)/' /etc/mkinitcpio.conf
 
