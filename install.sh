@@ -13,7 +13,8 @@ Starting...
 ( arch-chroot /mnt /root/04_configuration.sh )|& tee 04_configuration.log
 ( arch-chroot /mnt /root/05_bootloader.sh )|& tee 05_bootloader.log
 ( arch-chroot /mnt /root/06_user.sh )|& tee 06_user.log
-cp -v *.log /mnt/home/bettini/
+mkdir -p /mnt/home/bettini/install-logs
+cp -v *.log /mnt/home/bettini/install-logs/
 
 echo -ne "
 ...Finished!
