@@ -15,7 +15,8 @@ reflector \
 	--country Italy \
 	--age 12 \
 	--protocol https \
-	--latest 5 \
+	--fastest 5 \
+	--latest 20 \
 	--sort rate \
 	--save /etc/pacman.d/mirrorlist
 
