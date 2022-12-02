@@ -12,7 +12,7 @@ grub_resume_boot_option() {
     echo "resume=$grub_swap_part"
 }
 
-pacman -S --noconfirm --needed grub grub-btrfs efibootmgr base-devel linux-lts-headers networkmanager network-manager-applet
+pacman -S --noconfirm --needed grub efibootmgr base-devel linux-lts-headers networkmanager network-manager-applet
 
 sed -i 's/MODULES=(.*)/MODULES=(crc32c-intel btrfs)/' /etc/mkinitcpio.conf
 
