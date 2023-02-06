@@ -32,7 +32,7 @@ echo -ne "
 pacstrap
 "
 
-pacstrap /mnt base linux-lts linux-firmware nano vim intel-ucode btrfs-progs sof-firmware alsa-firmware
+pacstrap /mnt base linux linux-lts linux-firmware nano vim intel-ucode btrfs-progs sof-firmware alsa-firmware
 
 echo -ne "
 Generating fstab
