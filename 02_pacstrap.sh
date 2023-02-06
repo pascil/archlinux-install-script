@@ -2,6 +2,8 @@
 
 set -x #echo on
 
+set -eo pipefail
+
 # to avoid failures of the shape
 # signature from "..." is invalid
 # File ... is corrupted (invalid or corrupted package (PGP signature))

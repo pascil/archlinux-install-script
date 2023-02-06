@@ -2,4 +2,6 @@
 
 set -x #echo on
 
+set -eo pipefail
+
 cp -a *.sh /mnt/root/

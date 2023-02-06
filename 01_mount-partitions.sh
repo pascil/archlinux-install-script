@@ -2,6 +2,8 @@
 
 set -x #echo on
 
+set -eo pipefail
+
 echo -ne "
 Enabling swap on ${SWAP_PARTITION}
 "
