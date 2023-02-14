@@ -1,7 +1,0 @@
-synchronize the clock with
-timedatectl set-ntp true
-that's never been done!
-
-preparation for timeshift (in /etc/fstab)
-
-can we run an ansible playbook?
