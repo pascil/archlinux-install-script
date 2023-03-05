@@ -40,6 +40,9 @@ Generating fstab
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
+# remove subvolid to avoid problems with restoring snapper snapshots
+sed -i 's/subvolid=.*,//' /mnt/etc/fstab
+
 echo -ne "
 Showing fstab
 "
