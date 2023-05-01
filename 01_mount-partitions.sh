@@ -29,13 +29,13 @@ echo -ne "
 Mounting all partitions
 "
 
-mount -o subvol=/@,defaults,noatime,compress=zstd ${ROOT_PARTITION} /mnt
-mount -o subvol=/@home,defaults,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/home
-mount -o subvol=/@root,defaults,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/root
-mount -o subvol=/@srv,defaults,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/srv
-mount -o subvol=/@cache,defaults,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/var/cache
-mount -o subvol=/@log,defaults,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/var/log
-mount -o subvol=/@tmp,defaults,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/var/tmp
+mount -o subvol=/@,defaults,nodiscard,noatime,compress=zstd ${ROOT_PARTITION} /mnt
+mount -o subvol=/@home,defaults,nodiscard,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/home
+mount -o subvol=/@root,defaults,nodiscard,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/root
+mount -o subvol=/@srv,defaults,nodiscard,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/srv
+mount -o subvol=/@cache,defaults,nodiscard,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/var/cache
+mount -o subvol=/@log,defaults,nodiscard,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/var/log
+mount -o subvol=/@tmp,defaults,nodiscard,noatime,compress=zstd -m ${ROOT_PARTITION} /mnt/var/tmp
 
 mount -o defaults,noatime -m ${EFI_PARTITION} /mnt/boot/efi
 
