@@ -11,7 +11,7 @@ set -eo pipefail
 
 useradd -m bettini
 
-usermod -aG wheel,sys,rfkill bettini
+usermod -aG wheel,sys,rfkill,input bettini
 
 sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
