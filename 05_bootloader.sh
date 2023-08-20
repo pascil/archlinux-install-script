@@ -26,6 +26,11 @@ sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 mem
 
 sed -i "/^GRUB_CMDLINE_LINUX_DEFAULT/ s~\"$~ $(grub_resume_boot_option)\"~g" /etc/default/grub
 
-grub-install --target=x86_64-efi --bootloader-id=Arch --efi-directory=/boot/efi
+# "--removable" seemed to be required with Tianocore (KVM), to reuse the same machine and image
+# in different host OSes.
+# The option installs the EFI executable to the "fallback" path (e.g. EFI/boot/bootx64.efi)
+# to avoid having to register the executable to the UEFI firmware (NVRAM).
+# The scropt archinstall uses this option as well
+grub-install --target=x86_64-efi --bootloader-id=Arch --efi-directory=/boot/efi --removable
 
 grub-mkconfig -o /boot/grub/grub.cfg
