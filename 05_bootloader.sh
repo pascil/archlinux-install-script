@@ -31,6 +31,8 @@ sed -i "/^GRUB_CMDLINE_LINUX_DEFAULT/ s~\"$~ $(grub_resume_boot_option)\"~g" /et
 # The option installs the EFI executable to the "fallback" path (e.g. EFI/boot/bootx64.efi)
 # to avoid having to register the executable to the UEFI firmware (NVRAM).
 # The scropt archinstall uses this option as well
-grub-install --target=x86_64-efi --bootloader-id=Arch --efi-directory=/boot/efi --removable
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable --recheck
+
+grub-install --target=x86_64-efi --bootloader-id=Arch --efi-directory=/boot/efi
 
 grub-mkconfig -o /boot/grub/grub.cfg
