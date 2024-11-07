@@ -10,7 +10,7 @@ set -eo pipefail
 # arch-chroot /mnt /root/05_configuration.sh
 
 grub_resume_boot_option() {
-	grub_swap_part=$(find /dev/disk/ | grep "$(awk '$3=="swap" {print $1; exit}' /etc/fstab | cut -d= -f 2)")
+	grub_swap_part=$(find /dev/disk/by-uuid/ | grep "$(awk '$3=="swap" {print $1; exit}' /etc/fstab | cut -d= -f 2)")
     echo "resume=$grub_swap_part"
 }
 
