@@ -43,6 +43,9 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # remove subvolid to avoid problems with restoring snapper snapshots
 sed -i 's/subvolid=.*,//' /mnt/etc/fstab
 
+# ensure nodiscard is in fstab (though we used that in mount, it is not preserved)
+sed -i 's/noatime,compress/noatime,nodiscard,compress/' /mnt/etc/fstab
+
 echo -ne "
 Showing fstab
 "
