@@ -18,7 +18,7 @@ pacman -S --noconfirm --needed grub efibootmgr base-devel linux-lts-headers netw
 
 sed -i 's/MODULES=(.*)/MODULES=(crc32c-intel btrfs)/' /etc/mkinitcpio.conf
 
-sed -i 's/HOOKS=(.*)/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck resume)/' /etc/mkinitcpio.conf
+sed -i 's/HOOKS=(.*)/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck microcode resume)/' /etc/mkinitcpio.conf
 
 mkinitcpio -P
 
