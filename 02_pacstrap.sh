@@ -32,13 +32,13 @@ echo -ne "
 pacstrap
 "
 
-pacstrap /mnt base linux linux-lts linux-firmware nano vim intel-ucode btrfs-progs sof-firmware alsa-firmware
+pacstrap /mnt base linux linux-headers linux-lts-headers linux-firmware nano vim intel-ucode btrfs-progs sof-firmware alsa-firmware
 
 echo -ne "
 Generating fstab
 "
 
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >>/mnt/etc/fstab
 
 # remove subvolid to avoid problems with restoring snapper snapshots
 sed -i 's/subvolid=.*,//' /mnt/etc/fstab
