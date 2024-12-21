@@ -22,7 +22,6 @@ zram-size = min(ram * 0.75)
 compression-algorithm = zstd
 EOF
 
-swapon --discard --priority 100 /dev/zram0
 systemctl enable systemd-zram-setup@zram0.service
 
 echo -ne "
