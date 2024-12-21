@@ -7,14 +7,14 @@ set -eo pipefail
 # to avoid failures of the shape
 # signature from "..." is invalid
 # File ... is corrupted (invalid or corrupted package (PGP signature))
-pacman -S --noconfirm archlinux-keyring
+pacman -S --noconfirm archlinux-keyring reflector
 
 echo -ne "
 Setting mirrors
 "
 
 reflector \
-	--country Italy,Germany \
+	--country Germany \
 	--age 12 \
 	--protocol https \
 	--fastest 5 \
@@ -32,7 +32,9 @@ echo -ne "
 pacstrap
 "
 
-pacstrap /mnt base linux linux-headers linux-lts-headers linux-firmware nano vim intel-ucode btrfs-progs sof-firmware alsa-firmware
+pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano neovim ${CPU}-ucode btrfs-progs ntp wpa_supplicant \
+	dialog networkmanager network-manager-applet crony avahi cups zram-generator reflector bluez blueman bluez-utils p7zip unrar \
+	tar htop hyfetch git exfat-utils dosfstools efibootmgr acpi acpid pipewire pipewire-pulse pipewire-alsa mlocate 
 
 echo -ne "
 Generating fstab
