@@ -44,7 +44,7 @@ pacman -Syy
 echo -ne "
 Installing Desktop Environment
 "
-pacman -S --noconfirm kde dolphin konsole kate discover sddm
+pacman -S --noconfirm plasma-desktop dolphin konsole kate discover sddm
 
 systemctl enable sddm
 
