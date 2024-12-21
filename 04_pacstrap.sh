@@ -34,7 +34,7 @@ pacstrap
 
 pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano neovim ${CPU}-ucode btrfs-progs ntp wpa_supplicant \
 	dialog networkmanager network-manager-applet crony avahi cups zram-generator reflector bluez blueman bluez-utils p7zip unrar \
-	tar htop hyfetch git exfat-utils dosfstools efibootmgr acpi acpid pipewire pipewire-pulse pipewire-alsa mlocate 
+	tar htop hyfetch git exfat-utils dosfstools efibootmgr acpi acpid pipewire pipewire-pulse pipewire-alsa mlocate
 
 echo -ne "
 Generating fstab

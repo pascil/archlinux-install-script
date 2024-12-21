@@ -4,10 +4,10 @@ set -x #echo on
 
 set -eo pipefail
 
-export EFI_PARTITION=/dev/sda1
-export BOOT_PARTITION=/dev/sda2
-export ROOT_PARTITION=/dev/sda3
-export HOME_PARTITION=/dev/sdb1
+export EFI_PARTITION=/dev/sdb1
+export BOOT_PARTITION=/dev/sdb2
+export ROOT_PARTITION=/dev/sdb3
+export HOME_PARTITION=/dev/sda1
 export INST_HOSTNAME=archlinux
 export USER=pl
 export LOCALE=de_DE.UTF-8
