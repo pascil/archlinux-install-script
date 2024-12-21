@@ -34,7 +34,5 @@ mount -o subvol=/@tmp,defaults,nodiscard,noatime,compress=zstd -m ${ROOT_PARTITI
 echo -ne "
 Enabling swapfile
 "
-touch /mnt/swapfile
-chmod 600 /mnt/swapfile
-mkswap -U clear --size 4G --file /mnt/swapfile
+btrfs filesystem mkswapfile --size 4g --uuid clear /mnt/swapfile
 swapon --discard --priority 1 /mnt/swapfile
